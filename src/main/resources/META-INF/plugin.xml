@@ -1,0 +1,77 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.example.demoCopyCodePlugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>DemoCopyCodePlugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+<!--    <depends>com.intellij.modules.androidstudio</depends>-->
+    <depends>org.jetbrains.android</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="org.example.democopycodeplugin.AndroidInfoService"/>
+    </extensions>
+
+    <actions>
+        <group
+                id="MyDemoActionGroup"
+                description="Demo action group">
+            <reference ref="DialogAction"/>
+            <separator/>
+            <action
+                    id="MyDemoAction"
+                    class="org.example.democopycodeplugin.DialogAction"
+                    text="Demo Action"
+                    description="Demo action example"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </group>
+
+        <action id="DialogAction" class="org.example.democopycodeplugin.DialogAction"
+                text="DialogAction" description="This is a testing action"/>
+
+        <action id="com.example.yourplugin.ShowPackageNameAction"
+                class="org.example.democopycodeplugin.ShowPackageNameAction"
+                text="Show Package Name"
+                description="Displays the package name of the current Android project">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+
+        <action id="com.example.yourplugin.CopyComponents"
+                class="org.example.democopycodeplugin.CopyComponentsAction"
+                text="Copy Components"
+                description="Set up dependency components">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+
+        <action id="Properties" class="org.example.democopycodeplugin.MyDemoAction"
+                text="Show Properties Action" description="This is a testing action">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <action id="ShowAndroidModuleInfo" class="org.example.democopycodeplugin.ShowAndroidModuleInfoAction" text="Show Android Module Info">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>

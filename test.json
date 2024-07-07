@@ -1,0 +1,14 @@
+{
+  "depends": {
+    "android": [
+      {
+        "name": "okhttp",
+        "version": "4.9.1"
+      },
+      {
+        "name": "retrofit",
+        "version": "4.9.2"
+      }
+    ]
+  }
+}
