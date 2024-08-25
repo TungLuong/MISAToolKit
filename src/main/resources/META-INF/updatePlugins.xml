@@ -16,7 +16,7 @@ available at this repository.
     -->
     <plugin
             id="org.example.demoCopyCodePlugin"
-            url="https://github.com/androidle/demoplugin/blob/main/demoCopyCodePlugin-1.1-SNAPSHOT.jar"
+            url="https://github.com/androidle/demoplugin/main/demoCopyCodePlugin-1.1-SNAPSHOT.jar"
             version="1.1.1">
         <!--
         The <idea-version> element (required) must match the same element
