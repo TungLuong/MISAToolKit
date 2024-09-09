@@ -21,57 +21,61 @@
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
-<!--    <depends>com.intellij.modules.androidstudio</depends>-->
+    <!--    <depends>com.intellij.modules.androidstudio</depends>-->
     <depends>org.jetbrains.android</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="org.example.democopycodeplugin.AndroidInfoService"/>
+        <applicationService serviceImplementation="org.example.MISAPlugin.CodexService"/>
     </extensions>
 
     <actions>
         <group
-                id="MyDemoActionGroup"
-                description="Demo action group">
+                id="MISAToolkit"
+                description="Demo MISAToolkit">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <reference ref="DialogAction"/>
             <separator/>
-            <action
-                    id="MyDemoAction"
-                    class="org.example.democopycodeplugin.DialogAction"
-                    text="Demo Action"
-                    description="Demo action example"/>
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
+
+            <action id="CopySelectedTextAction"
+                    class="org.example.MISAPlugin.CopySelectedTextAction"
+                    text="Copy Selected Text"
+                    description="Copies the selected text to the clipboard">
+                <add-to-group group-id="MISAToolkit" anchor="last"/>
+            </action>
+
+            <action id="ModifyCodeAtCaretAction"
+                    class="org.example.MISAPlugin.ModifyCodeAtCaretAction"
+                    text="Modify Code at Caret"
+                    description="Modifies the code at the current caret position">
+                <add-to-group group-id="MISAToolkit" anchor="last"/>
+                <keyboard-shortcut keymap="$default" first-keystroke="ENTER"/>
+            </action>
+
+            <action id="ShowCodexSuggestionsAction"
+                    class="org.example.MISAPlugin.ShowCodexSuggestionsAction"
+                    text="Show Codex Suggestions"
+                    description="Displays Codex suggestions">
+                <add-to-group group-id="MISAToolkit" anchor="last"/>
+            </action>
+
+            <action id="ShowHelpAction"
+                    class="org.example.MISAPlugin.ShowHelpAction"
+                    text="Show Help"
+                    description="Displays help information">
+                <add-to-group group-id="MISAToolkit" anchor="last"/>
+            </action>
+
+            <action id="OpenCopilotPluginAction"
+                    class="org.example.MISAPlugin.OpenCopilotPluginAction"
+                    text="Open GitHub Copilot"
+                    description="Open the GitHub Copilot plugin window">
+                <add-to-group group-id="MISAToolkit" anchor="last"/>
+            </action>
+
+
         </group>
-
-        <action id="DialogAction" class="org.example.democopycodeplugin.DialogAction"
-                text="DialogAction" description="This is a testing action"/>
-
-        <action id="com.example.yourplugin.ShowPackageNameAction"
-                class="org.example.democopycodeplugin.ShowPackageNameAction"
-                text="Show Package Name"
-                description="Displays the package name of the current Android project">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
-        </action>
-
-        <action id="com.example.yourplugin.CopyComponents"
-                class="org.example.democopycodeplugin.CopyComponentsAction"
-                text="Copy Components"
-                description="Set up dependency components">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-        </action>
-
-        <action id="Properties" class="org.example.democopycodeplugin.MyDemoAction"
-                text="Show Properties Action" description="This is a testing action">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-        </action>
-
-        <action id="ShowAndroidModuleInfo" class="org.example.democopycodeplugin.ShowAndroidModuleInfoAction" text="Show Android Module Info">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
-        </action>
     </actions>
 
 </idea-plugin>
