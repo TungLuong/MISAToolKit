@@ -27,52 +27,77 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="org.example.MISAPlugin.CodexService"/>
+        <applicationService serviceImplementation="org.example.MISAPlugin.demo.CodexService"/>
     </extensions>
 
+<!--    <actions>-->
+<!--        <group-->
+<!--                id="MISAToolkit"-->
+<!--                description="Demo MISAToolkit">-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="last"/>-->
+<!--            <separator/>-->
+
+<!--            <action id="CopySelectedTextAction"-->
+<!--                    class="org.example.MISAPlugin.CopySelectedTextAction"-->
+<!--                    text="Copy Selected Text"-->
+<!--                    description="Copies the selected text to the clipboard"/>-->
+
+
+<!--            <action id="ModifyCodeAtCaretAction"-->
+<!--                    class="org.example.MISAPlugin.ModifyCodeAtCaretAction"-->
+<!--                    text="Modify Code at Caret"-->
+<!--                    description="Modifies the code at the current caret position">-->
+<!--                <add-to-group group-id="MISAToolkit" anchor="last"/>-->
+<!--                <keyboard-shortcut keymap="$default" first-keystroke="ENTER"/>-->
+<!--            </action>-->
+
+<!--            <action id="ShowCodexSuggestionsAction"-->
+<!--                    class="org.example.MISAPlugin.ShowCodexSuggestionsAction"-->
+<!--                    text="Show Codex Suggestions"-->
+<!--                    description="Displays Codex suggestions">-->
+<!--                <add-to-group group-id="MISAToolkit" anchor="last"/>-->
+<!--            </action>-->
+
+<!--            <action id="ShowHelpAction"-->
+<!--                    class="org.example.MISAPlugin.ShowHelpAction"-->
+<!--                    text="Show Help"-->
+<!--                    description="Displays help information">-->
+<!--                <add-to-group group-id="MISAToolkit" anchor="last"/>-->
+<!--            </action>-->
+
+<!--            <action id="OpenCopilotPluginAction"-->
+<!--                    class="org.example.MISAPlugin.OpenCopilotPluginAction"-->
+<!--                    text="Open GitHub Copilot"-->
+<!--                    description="Open the GitHub Copilot plugin window">-->
+<!--                <add-to-group group-id="MISAToolkit" anchor="last"/>-->
+<!--            </action>-->
+
+
+<!--        </group>-->
+<!--    </actions>-->
+
+    <!-- Khai báo các actions -->
     <actions>
-        <group
-                id="MISAToolkit"
-                description="Demo MISAToolkit">
+        <group id="org.example.MISAPlugin.MISAAIToolsAction" text="MISA AI Tools" description="Các công cụ AI hỗ trợ của MISA" popup="true">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-            <reference ref="DialogAction"/>
-            <separator/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
 
-            <action id="CopySelectedTextAction"
-                    class="org.example.MISAPlugin.CopySelectedTextAction"
-                    text="Copy Selected Text"
-                    description="Copies the selected text to the clipboard">
-                <add-to-group group-id="MISAToolkit" anchor="last"/>
-            </action>
+            <action id="org.example.MISAPlugin.GenerateCommentAction" class="org.example.MISAPlugin.actions.GenerateCommentAction" text="Hỗ trợ sinh comment" description="Sinh comment tự động cho mã nguồn"/>
+            <action id="org.example.MISAPlugin.BuildCreateVariablePromptAction" class="org.example.MISAPlugin.actions.BuildCreateVariablePromptAction" text="Đặt tên biến theo mô tả" description="Đặt tên biến theo mô tả"/>
+            <action id="org.example.MISAPlugin.GenerateScreenMappingXMLAction" class="org.example.MISAPlugin.actions.GenerateScreenMappingXMLAction" text="Sinh File màn hình ánh xạ XML" description="Tạo file màn hình ánh xạ XML tự động"/>
 
-            <action id="ModifyCodeAtCaretAction"
-                    class="org.example.MISAPlugin.ModifyCodeAtCaretAction"
-                    text="Modify Code at Caret"
-                    description="Modifies the code at the current caret position">
-                <add-to-group group-id="MISAToolkit" anchor="last"/>
-                <keyboard-shortcut keymap="$default" first-keystroke="ENTER"/>
-            </action>
+            <group id="org.example.MISAPlugin.GenerateFileFromTemplateAction" text="Sinh file theo template" description="Sinh file theo template" popup="true">
+                <add-to-group group-id="org.example.MISAPlugin.MISAAIToolsAction" anchor="last"/>
+                <action id="org.example.MISAPlugin.BuildCreateSealedClassPromptAction" class="org.example.MISAPlugin.actions.BuildCreateSealedClassPromptAction" text="Tạo sealed class từ yêu cầu của BA" description="Tạo sealed class từ yêu cầu của BA theo template của dự án"/>
+                <action id="org.example.MISAPlugin.BuildCreateEnumsClassPromptAction" class="org.example.MISAPlugin.actions.BuildCreateEnumsClassPromptAction" text="Tạo Enum class từ yêu cầu của BA" description="Tạo Enum class từ yêu cầu của BA theo template của dự án"/>
+                <action id="org.example.MISAPlugin.BuildCreateClassPromptAction" class="org.example.MISAPlugin.actions.BuildCreateClassPromptAction" text="Tạo class từ yêu cầu cầu của BA" description="Tạo class từ yêu cầu cầu của BA theo template của dự án"/>
+                <action id="org.example.MISAPlugin.BuildCreateParamClassPromptAction" class="org.example.MISAPlugin.actions.BuildCreateParamClassPromptAction" text="Tạo class param từ yêu cầu của BA" description="Tạo class param từ yêu cầu của BA theo template của dự án"/>
+                <action id="org.example.MISAPlugin.BuildCreateResultClassPromptAction" class="org.example.MISAPlugin.actions.BuildCreateResultClassPromptAction" text="Tạo class result từ yêu cầu của BA" description="Tạo class result từ yêu cầu của BA theo template của dự án"/>
+                <action id="org.example.MISAPlugin.BuildCreateFunctionPromptAction" class="org.example.MISAPlugin.actions.BuildCreateFunctionPromptAction" text="Tạo function từ yêu cầu của BA" description="Tạo function từ yêu cầu của BA theo template của dự án"/>
+                <action id="org.example.MISAPlugin.BuildCreateEmptyFunctionPromptAction" class="org.example.MISAPlugin.actions.BuildCreateEmptyFunctionPromptAction" text="Tạo function trống từ yêu cầu của BA" description="Tạo function trống từ yêu cầu của BA theo template của dự án"/>
+            </group>
 
-            <action id="ShowCodexSuggestionsAction"
-                    class="org.example.MISAPlugin.ShowCodexSuggestionsAction"
-                    text="Show Codex Suggestions"
-                    description="Displays Codex suggestions">
-                <add-to-group group-id="MISAToolkit" anchor="last"/>
-            </action>
-
-            <action id="ShowHelpAction"
-                    class="org.example.MISAPlugin.ShowHelpAction"
-                    text="Show Help"
-                    description="Displays help information">
-                <add-to-group group-id="MISAToolkit" anchor="last"/>
-            </action>
-
-            <action id="OpenCopilotPluginAction"
-                    class="org.example.MISAPlugin.OpenCopilotPluginAction"
-                    text="Open GitHub Copilot"
-                    description="Open the GitHub Copilot plugin window">
-                <add-to-group group-id="MISAToolkit" anchor="last"/>
-            </action>
+            <action id="org.example.MISAPlugin.ConvertCodeToSwiftAction" class="org.example.MISAPlugin.actions.ConvertCodeToSwiftAction" text="Convert code sang swift" description="Chuyển đổi mã nguồn thành Swift"/>
 
 
         </group>

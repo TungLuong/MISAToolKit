@@ -1,4 +1,4 @@
-package org.example.MISAPlugin
+package org.example.MISAPlugin.demo
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

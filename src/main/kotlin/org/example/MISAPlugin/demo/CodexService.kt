@@ -1,4 +1,4 @@
-package org.example.MISAPlugin
+package org.example.MISAPlugin.demo
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.project.Project
