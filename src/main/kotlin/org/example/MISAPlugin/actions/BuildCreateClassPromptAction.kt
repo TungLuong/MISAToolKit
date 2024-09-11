@@ -2,9 +2,11 @@ package org.example.MISAPlugin.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.impl.ActionButton
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.wm.ToolWindowManager
+import com.intellij.ui.components.JBTextArea
 import org.example.MISAPlugin.dialog.ContextInputDialog
 import javax.swing.JComponent
 import javax.swing.JPanel
@@ -21,52 +23,22 @@ class BuildCreateClassPromptAction : AnAction() {
             val toolWindow = ToolWindowManager.getInstance(project).getToolWindow("GitHub Copilot Chat")
             toolWindow?.show(null)
 
-            val contentManager = toolWindow?.contentManager
-            val contents = contentManager?.contents
+            toolWindow?.let {
+                val jbTextArea = (((((toolWindow.contentManager.contents.first().component.components[2] as JPanel).components[2] as JPanel).components[1] as JPanel).components[0] as JPanel).components[0] as JBTextArea)
+                jbTextArea.text = "Hello, Copilot! Context:"
+                // reference
+                // file:///Users/tungluongngoc/StudioProjects/Cukcuk-lite/app/src/main/java/com/example/cukcuklitedemo/reactproduct/ReactProductActivity.java
 
-            if (contents != null) {
-                for (content in contents) {
-                    val component = content.component
-                    if (component is JPanel) {
-                        for (comp in component.components) {
-                            if (comp is JTextField) {
-                                //comp.text = "Hello, Copilot! Context: $context"
-                                return
-                            }
-                        }
-                    }
-                }
+                // (((((toolWindow.contentManager.contents.first().component.components[2] as JPanel).components[2] as JPanel).components[1] as JPanel).components.get(1) as JPanel).components.get(0) as Container)
+                // send data
+                ((((((toolWindow.contentManager.contents.first().component.components[2] as JPanel).components[2] as JPanel).components[1] as JPanel).components[2] as JPanel).components.get(0) as JPanel).components[0] as ActionButton).click()
+
             }
         }
     }
 
     private fun buildCreateClassPrompt(desc: String): String {
         return "create a class for \"$desc\""
-    }
-
-    class ContextInputDialog : DialogWrapper(true) {
-        private val featureField = JTextField()
-        private val requirementField = JTextField()
-
-        init {
-            init()
-            title = "Input Context"
-        }
-
-        override fun createCenterPanel(): JComponent {
-            return panel {
-                row("Feature:") { featureField() }
-                row("Requirement:") { requirementField() }
-            }
-        }
-
-        fun getFeature(): String {
-            return featureField.text
-        }
-
-        fun getRequirement(): String {
-            return requirementField.text
-        }
     }
 }
 

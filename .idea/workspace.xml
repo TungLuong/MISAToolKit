@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebb6a0c1-0379-43b0-bdca-5e0f94517daa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateEmptyFunctionPromptAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateEnumsClassPromptAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateFunctionPromptAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateParamClassPromptAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateResultClassPromptAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateSealedClassPromptAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/ConvertCodeToSwiftAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/GenerateCommentAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/GenerateFileFromTemplateAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/GenerateScreenMappingXMLAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/MISAAIToolsAction.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/dialog/ContextInputDialog.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/CodexService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/CodexService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/CopySelectedTextAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/CopySelectedTextAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/ModifyCodeAtCaretAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/ModifyCodeAtCaretAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/OpenCopilotPluginAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/OpenCopilotPluginAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/ShowCodexSuggestionsAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/ShowCodexSuggestionsAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/ShowHelpAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/ShowHelpAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +95,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.Build demoCopyCodePlugin.executor": "Run",
-    "Gradle.Run Plugin.executor": "Run",
+    "Gradle.Run Plugin.executor": "Debug",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Gradle.demoCopyCodePlugin [setupDependencies].executor": "Run",
     "Gradle.demoplugin [setupDependencies].executor": "Run",
@@ -173,7 +154,7 @@
       <workItem from="1725553632753" duration="6432000" />
       <workItem from="1725892293779" duration="1947000" />
       <workItem from="1725894513647" duration="2443000" />
-      <workItem from="1725974340316" duration="11473000" />
+      <workItem from="1725974340316" duration="16080000" />
     </task>
     <servers />
   </component>
@@ -221,6 +202,16 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/OpenCopilotPluginAction.kt</url>
           <line>20</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt</url>
+          <line>26</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt</url>
+          <line>31</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
