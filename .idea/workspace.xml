@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebb6a0c1-0379-43b0-bdca-5e0f94517daa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/common/CopilotHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/GenerateScreenMappingXMLAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/GenerateScreenMappingXMLAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/CodexService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/common/CodexService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/ShowCodexSuggestionsAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/ShowCodexSuggestionsAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/dialog/ContextInputDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +101,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.Build demoCopyCodePlugin.executor": "Run",
-    "Gradle.Run Plugin.executor": "Debug",
+    "Gradle.Run Plugin.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Gradle.demoCopyCodePlugin [setupDependencies].executor": "Run",
     "Gradle.demoplugin [setupDependencies].executor": "Run",
@@ -129,6 +135,7 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="org.example.MISAPlugin.service" />
       <recent name="org.example.democopycodeplugin" />
     </key>
   </component>
@@ -154,7 +161,7 @@
       <workItem from="1725553632753" duration="6432000" />
       <workItem from="1725892293779" duration="1947000" />
       <workItem from="1725894513647" duration="2443000" />
-      <workItem from="1725974340316" duration="16080000" />
+      <workItem from="1725974340316" duration="19252000" />
     </task>
     <servers />
   </component>
@@ -184,7 +191,7 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/CodexService.kt</url>
+          <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/common/CodexService.kt</url>
           <line>35</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -202,16 +209,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/demo/OpenCopilotPluginAction.kt</url>
           <line>20</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt</url>
-          <line>26</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/org/example/MISAPlugin/actions/BuildCreateClassPromptAction.kt</url>
-          <line>31</line>
-          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
