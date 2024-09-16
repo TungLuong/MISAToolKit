@@ -4,14 +4,17 @@ plugins {
     id("org.jetbrains.intellij") version "1.17.3"
 }
 
-group = "org.example"
-version = "1.1-SNAPSHOT"
+group = "vn.com.misa"
+version = "1.0.0"
 
 dependencies {
     implementation(gradleApi())
     implementation(localGroovy())
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("org.json:json:20210307")
+
+    // Add the JAR file as a dependency
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 }
 
 repositories {
@@ -22,11 +25,8 @@ repositories {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-//    version.set("2022.2.1")
-//    version.set("2021.3.1")
-//    type.set("IC") // Target IDE Platform
     localPath = "/Applications/Android Studio.app/Contents"
-    plugins.set(listOf("android"))// This adds the Android plugin dependencies
+    plugins.set(listOf("android", "com.github.copilot:1.5.22.6765"))
 }
 
 tasks {
