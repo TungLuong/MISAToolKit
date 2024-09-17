@@ -107,7 +107,21 @@
                 description="Chuyển đổi mã nguồn thành Swift" id="MSConvertCodeToSwiftAction"
                 text="Convert Code Sang Swift" />
 
-
+            <action id="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
+                    class="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
+                    text="Show MISA Tool Helper"
+                    description="Show the MISA Tool Helper window">
+            </action>
         </group>
     </actions>
+
+    <!-- Other plugin configurations -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="MISA Tool Help Window"
+                    factoryClass="vn.com.misa.misatoolkit.window.MISAToolHelpWindowFactory"
+                    anchor="right"
+                    canCloseContents="true"
+                    canWorkInDumbMode="true"/>
+    </extensions>
+
 </idea-plugin>
