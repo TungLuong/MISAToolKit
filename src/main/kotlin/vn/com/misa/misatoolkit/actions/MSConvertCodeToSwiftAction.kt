@@ -1,9 +1,9 @@
-package org.example.MISAPlugin.actions
+package vn.com.misa.misatoolkit.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 
-class ConvertCodeToSwiftAction : AnAction() {
+class MSConvertCodeToSwiftAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
         // Logic cho hành động chuyển đổi code sang Swift
         println("Convert code sang swift clicked")

@@ -1,4 +1,4 @@
-package org.example.MISAPlugin.demo
+package vn.com.misa.misatoolkit.demo
 
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.AnAction

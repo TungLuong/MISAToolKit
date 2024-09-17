@@ -1,45 +1,25 @@
-package org.example.MISAPlugin.actions
+package vn.com.misa.misatoolkit.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.DialogWrapper
-import com.intellij.openapi.wm.ToolWindowManager
-import com.intellij.ui.dsl.builder.panel
+import vn.com.misa.misatoolkit.copilot.replaceTextInChat
 import java.awt.Dimension
 import javax.swing.JComponent
-import javax.swing.JPanel
 import javax.swing.JTextField
 
-class GenerateScreenMappingXMLAction : AnAction() {
+class BuildCreateClassPromptAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
         // Show the context input dialog
         val dialog = ContextInputDialog()
         if (dialog.showAndGet()) {
-            val context = dialog.getContext()
-            println("Context: $context")
-
             // Logic to generate XML file with context
-            val project = e.project ?: return
-            val toolWindow = ToolWindowManager.getInstance(project).getToolWindow("GitHub Copilot Chat")
-            toolWindow?.show(null)
-
-            val contentManager = toolWindow?.contentManager
-            val contents = contentManager?.contents
-
-            if (contents != null) {
-                for (content in contents) {
-                    val component = content.component
-                    if (component is JPanel) {
-                        for (comp in component.components) {
-                            if (comp is JTextField) {
-                                comp.text = "Hello, Copilot! Context: $context"
-                                return
-                            }
-                        }
-                    }
-                }
-            }
+            e.replaceTextInChat(buildCreateClassPrompt(dialog.getContext()))
         }
+    }
+
+    private fun buildCreateClassPrompt(desc: String): String {
+        return "create a class for \"$desc\""
     }
 
     class ContextInputDialog : DialogWrapper(true) {
@@ -57,7 +37,7 @@ class GenerateScreenMappingXMLAction : AnAction() {
         }
 
         override fun createCenterPanel(): JComponent {
-            return panel {
+            return com.intellij.ui.dsl.builder.panel {
                 row("Feature:") { cell(contextField) }
                 row("Requirement:") { cell(context2Field) }
             }
@@ -67,5 +47,5 @@ class GenerateScreenMappingXMLAction : AnAction() {
             return contextField.text
         }
     }
-
 }
+

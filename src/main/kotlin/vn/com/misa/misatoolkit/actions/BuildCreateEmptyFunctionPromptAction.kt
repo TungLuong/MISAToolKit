@@ -1,22 +1,23 @@
-package org.example.MISAPlugin.actions
+package vn.com.misa.misatoolkit.actions
+
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.Messages
 
-class BuildCreateFunctionPromptAction : AnAction() {
+class BuildCreateEmptyFunctionPromptAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
         // Example description
         val description = "yêu cầu của BA"
-        val prompt = buildCreateFunctionPrompt(description)
+        val prompt = buildCreateEmptyFunctionPrompt(description)
         Messages.showMessageDialog(
             e.project,
             prompt,
-            "Build Create Function Prompt",
+            "Build Create Empty Function Prompt",
             Messages.getInformationIcon()
         )
     }
 
-    private fun buildCreateFunctionPrompt(desc: String): String {
-        return "create a function for \"$desc\""
+    private fun buildCreateEmptyFunctionPrompt(desc: String): String {
+        return "create an empty function for \"$desc\""
     }
 }
