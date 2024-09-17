@@ -1,13 +1,12 @@
 package vn.com.misa.misatoolkit.copilot
 
-import com.github.copilot.chat.input.CopilotChatInputTextArea
-import com.github.copilot.chat.references.ReferenceAction
 import com.intellij.openapi.actionSystem.ActionGroup
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowManager
+import com.intellij.ui.components.JBTextArea
 import vn.com.misa.misatoolkit.common.getComponentsByType
 
 private const val EDITOR_POPUP_MENU_ACTION = "EditorPopupMenu"
@@ -27,8 +26,8 @@ val Project.copilotChat: ToolWindow
 fun AnActionEvent.replaceTextInChat(content: String) {
     val toolWindow = project?.copilotChat ?: throw GithubCopilotException.CopilotNotInstalled()
     toolWindow.show {
-        toolWindow.component.getComponentsByType(CopilotChatInputTextArea::class).lastOrNull()?.let { chatTextArea ->
-            chatTextArea.text = content.trim()
+        toolWindow.component.getComponentsByType(JBTextArea::class).lastOrNull()?.let { jbTextArea ->
+            jbTextArea.text = content.trim()
         }
     }
 }
