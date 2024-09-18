@@ -1,5 +1,8 @@
 package vn.com.misa.misatoolkit.common
 
+import com.intellij.find.findUsages.FindClassUsagesDialog
+import com.intellij.openapi.actionSystem.AnActionEvent
+import org.jetbrains.kotlin.idea.base.searching.usages.KotlinClassFindUsagesOptions
 import java.awt.Component
 import java.awt.Container
 import javax.swing.JComponent

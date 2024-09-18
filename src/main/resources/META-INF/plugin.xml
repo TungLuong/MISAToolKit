@@ -67,7 +67,7 @@
                 description="Sinh comment tự động cho mã nguồn" id="MSGenerateCommentAction"
                 text="Hỗ Trợ Sinh Comment" />
 
-            <action class="vn.com.misa.misatoolkit.actions.MSGenerateScreenMappingXMLAction"
+            <action class="vn.com.misa.misatoolkit.actions.screenmapxml.MSGenerateScreenMappingXMLAction"
                 description="Tạo file màn hình ánh xạ XML tự động" id="MSGenerateScreenMappingXMLAction"
                 text="Sinh File Màn Hình Ánh Xạ XML" />
 

@@ -26,8 +26,8 @@ val Project.copilotChat: ToolWindow
 fun AnActionEvent.replaceTextInChat(content: String) {
     val toolWindow = project?.copilotChat ?: throw GithubCopilotException.CopilotNotInstalled()
     toolWindow.show {
-        toolWindow.component.getComponentsByType(JBTextArea::class).lastOrNull()?.let { jbTextArea ->
-            jbTextArea.text = content.trim()
+        toolWindow.component.getComponentsByType(JBTextArea::class).lastOrNull()?.let { chatTextArea ->
+            chatTextArea.text = content.trim()
         }
     }
 }
