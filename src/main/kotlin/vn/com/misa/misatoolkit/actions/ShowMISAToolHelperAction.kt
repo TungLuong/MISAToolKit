@@ -1,4 +1,4 @@
-package vn.com.misa.misatoolkit.action
+package vn.com.misa.misatoolkit.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

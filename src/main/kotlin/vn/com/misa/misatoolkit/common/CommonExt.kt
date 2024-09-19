@@ -1,11 +1,13 @@
 package vn.com.misa.misatoolkit.common
 
-import com.intellij.find.findUsages.FindClassUsagesDialog
-import com.intellij.openapi.actionSystem.AnActionEvent
-import org.jetbrains.kotlin.idea.base.searching.usages.KotlinClassFindUsagesOptions
+import com.intellij.ui.JBColor
 import java.awt.Component
 import java.awt.Container
+import java.awt.event.FocusEvent
+import java.awt.event.FocusListener
 import javax.swing.JComponent
+import javax.swing.JTextArea
+import javax.swing.JTextField
 import kotlin.reflect.KClass
 import kotlin.reflect.safeCast
 
@@ -36,7 +38,8 @@ fun <T : Any> JComponent.getComponentsByType(clazz: KClass<T>): List<T> {
  */
 class ComponentTree(val root: Component, val nodes: List<ComponentTree>) {
     override fun toString(): String {
-        val rootName = "${root.javaClass.simpleName} (${root.javaClass.superclass.simpleName}) (${root.javaClass.packageName})"
+        val rootName =
+            "${root.javaClass.simpleName} (${root.javaClass.superclass.simpleName}) (${root.javaClass.packageName})"
         return if (nodes.isEmpty()) {
             "\"$rootName\""
         } else {
@@ -62,3 +65,43 @@ val Component.tree: ComponentTree
         )
     }
 
+
+fun JTextField.setHint(hint: String) {
+    addFocusListener(object : FocusListener {
+        override fun focusGained(e: FocusEvent) {
+            if (text == hint) {
+                text = ""
+                foreground = JBColor.BLACK
+            }
+        }
+
+        override fun focusLost(e: FocusEvent) {
+            if (text.isEmpty()) {
+                text = hint
+                foreground = JBColor.GRAY
+            }
+        }
+    })
+    text = hint
+    foreground = JBColor.GRAY
+}
+
+fun JTextArea.setHint(hint: String) {
+    addFocusListener(object : FocusListener {
+        override fun focusGained(e: FocusEvent) {
+            if (text == hint) {
+                text = ""
+                foreground = JBColor.BLACK
+            }
+        }
+
+        override fun focusLost(e: FocusEvent) {
+            if (text.isEmpty()) {
+                text = hint
+                foreground = JBColor.GRAY
+            }
+        }
+    })
+    text = hint
+    foreground = JBColor.GRAY
+}

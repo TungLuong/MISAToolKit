@@ -74,41 +74,50 @@
             <group description="Sinh file theo template" id="MSGenerateFileFromTemplateAction" popup="true"
                 text="Sinh File Theo Template">
                 <action class="vn.com.misa.misatoolkit.actions.BuildCreateSealedClassPromptAction"
-                    description="Tạo sealed class từ yêu cầu của BA theo template của dự án"
+                    description="Tạo sealed class giống với file hiện tại"
                     id="vn.com.misa.misatoolkit.actions.BuildCreateSealedClassPromptAction"
-                    text="Tạo Sealed Class Từ Yêu Cầu Của BA" />
+                    text="Tạo Sealed Class Giống Với File Hiện Tại" />
                 <action class="vn.com.misa.misatoolkit.actions.BuildCreateEnumsClassPromptAction"
-                    description="Tạo Enum class từ yêu cầu của BA theo template của dự án"
+                    description="Tạo Enum class giống với file hiện tại"
                     id="vn.com.misa.misatoolkit.actions.BuildCreateEnumsClassPromptAction"
-                    text="Tạo Enum Class Từ Yêu Cầu Của BA" />
+                    text="Tạo Enum Class Giống Với File Hiện Tại" />
                 <action class="vn.com.misa.misatoolkit.actions.BuildCreateClassPromptAction"
-                    description="Tạo class từ yêu cầu cầu của BA theo template của dự án"
+                    description="Tạo class giống với file hiện tại"
                     id="vn.com.misa.misatoolkit.actions.BuildCreateClassPromptAction"
-                    text="Tạo Class Từ Yêu Cầu Cầu Của BA" />
+                    text="Tạo Class Giống Với File Hiện Tại" />
                 <action class="vn.com.misa.misatoolkit.actions.BuildCreateParamClassPromptAction"
-                    description="Tạo class param từ yêu cầu của BA theo template của dự án"
+                    description="Tạo class param giống với file hiện tại"
                     id="vn.com.misa.misatoolkit.actions.BuildCreateParamClassPromptAction"
-                    text="Tạo Class Param Từ Yêu Cầu Của BA" />
+                    text="Tạo Class Param Giống Với File Hiện Tại" />
                 <action class="vn.com.misa.misatoolkit.actions.BuildCreateResultClassPromptAction"
-                    description="Tạo class result từ yêu cầu của BA theo template của dự án"
+                    description="Tạo class result giống với file hiện tại"
                     id="vn.com.misa.misatoolkit.actions.BuildCreateResultClassPromptAction"
-                    text="Tạo Class Result Từ Yêu Cầu Của BA" />
-                <action class="vn.com.misa.misatoolkit.actions.BuildCreateFunctionPromptAction"
-                    description="Tạo function từ yêu cầu của BA theo template của dự án"
-                    id="vn.com.misa.misatoolkit.actions.BuildCreateFunctionPromptAction"
-                    text="Tạo Function Từ Yêu Cầu Của BA" />
-                <action class="vn.com.misa.misatoolkit.actions.BuildCreateEmptyFunctionPromptAction"
-                    description="Tạo function trống từ yêu cầu của BA theo template của dự án"
-                    id="vn.com.misa.misatoolkit.actions.BuildCreateEmptyFunctionPromptAction"
-                    text="Tạo Function Trống Từ Yêu Cầu Của BA" />
+                    text="Tạo Class Result Giống Với File Hiện Tại" />
+
             </group>
 
-            <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToSwiftAction"
-                description="Chuyển đổi mã nguồn thành Swift" id="MSConvertCodeToSwiftAction"
-                text="Convert Code Sang Swift" />
+            <group description="Sinh file theo template" id="MSConvertCodeToOtherLanguageAction" popup="true"
+                text="Convert Code Sang Ngôn Ngữ Khác">
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToSwiftAction"
+                    description="Chuyển đổi mã nguồn thành Swift" id="MSConvertCodeToSwiftAction"
+                    text="Swift" />
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToJavaAction"
+                    description="Chuyển đổi mã nguồn thành Java" id="MSConvertCodeToJavaAction"
+                    text="Java" />
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToKotlinAction"
+                    description="Chuyển đổi mã nguồn thành Kotlin" id="MSConvertCodeToKotlinAction"
+                    text="Kotlin" />
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToDartAction"
+                    description="Chuyển đổi mã nguồn thành Dart" id="MSConvertCodeToDartAction"
+                    text="Dart" />
+            </group>
 
-            <action id="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
-                    class="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
+            <action class="vn.com.misa.misatoolkit.actions.MSConvertJsonToObjectAction"
+                description="Chuyển đổi json thành object" id="MSConvertJsonToObjectAction"
+                text="Json to Object" />
+
+            <action id="vn.com.misa.misatoolkit.actions.ShowMISAToolHelperAction"
+                    class="vn.com.misa.misatoolkit.actions.ShowMISAToolHelperAction"
                     text="Show MISA Tool Helper"
                     description="Show the MISA Tool Helper window">
             </action>
