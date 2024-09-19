@@ -96,9 +96,25 @@
 
             </group>
 
-            <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToSwiftAction"
-                description="Chuyển đổi mã nguồn thành Swift" id="MSConvertCodeToSwiftAction"
-                text="Convert Code Sang Swift" />
+            <group description="Sinh file theo template" id="MSConvertCodeToOtherLanguageAction" popup="true"
+                text="Convert Code Sang Ngôn Ngữ Khác">
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToSwiftAction"
+                    description="Chuyển đổi mã nguồn thành Swift" id="MSConvertCodeToSwiftAction"
+                    text="Swift" />
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToJavaAction"
+                    description="Chuyển đổi mã nguồn thành Java" id="MSConvertCodeToJavaAction"
+                    text="Java" />
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToKotlinAction"
+                    description="Chuyển đổi mã nguồn thành Kotlin" id="MSConvertCodeToKotlinAction"
+                    text="Kotlin" />
+                <action class="vn.com.misa.misatoolkit.actions.MSConvertCodeToDartAction"
+                    description="Chuyển đổi mã nguồn thành Dart" id="MSConvertCodeToDartAction"
+                    text="Dart" />
+            </group>
+
+            <action class="vn.com.misa.misatoolkit.actions.MSConvertJsonToObjectAction"
+                description="Chuyển đổi json thành object" id="MSConvertJsonToObjectAction"
+                text="Json to Object" />
 
             <action id="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
                     class="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
