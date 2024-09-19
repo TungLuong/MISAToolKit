@@ -2,13 +2,15 @@ package vn.com.misa.misatoolkit.actions.screenmapxml
 
 data class ScreenMappingXMLPrompt(
     private val fileName: String,
-    var type: ScreenType,
+    var type: ScreenType = ScreenType.suggest(fileName),
     var userRequirement: String? = null,
     var example: String? = null
 ) {
+
+
     private fun buildContext(): String {
         return """
-            I am working on an Android application and need a/an ${type.stringValue} a Kotlin/Java class that inflates a XML layout excerpt from file "$fileName" and sets up the necessary UI components.
+            I am working on an Android application and need a/an ${type.stringValue} Kotlin/Java class that inflates a XML layout excerpt from file "$fileName" and sets up the necessary UI components.
         """.trimIndent()
     }
 
@@ -25,7 +27,7 @@ data class ScreenMappingXMLPrompt(
     private fun buildSystemRequirement(): String {
         return "\n" + """
             The class should include:
-               Initialization of UI components (e.g., Button, TextView, etc.) with private variables
+               Initialization of UI components (e.g., Button, TextView, etc.) have id with private variables using ViewBinding if available otherwise findViewById
                Setting up any required listeners (e.g., onClickListener)
                Any additional setup required for the specific type of class ${type.stringValue}
                Any additional setup code (e.g., setting up a RecyclerView, ViewPager, etc.)
@@ -51,13 +53,5 @@ data class ScreenMappingXMLPrompt(
 
     fun buildPrompt(): String {
         return buildContext() + buildUserRequirement() + buildSystemRequirement() + buildExample()
-    }
-
-    enum class ScreenType(val stringValue: String) {
-        ACTIVITY("Activity"),
-        FRAGMENT("Fragment"),
-        DIALOG("Dialog"),
-        POPUP("Popup"),
-        DIALOG_("PopupFragment"),
     }
 }

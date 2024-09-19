@@ -11,7 +11,6 @@ class MSGenerateScreenMappingXMLAction : AnAction() {
         val dialog = ScreenMappingXMLContextDialog(
             prompt = ScreenMappingXMLPrompt(
                 fileName = (e.dataContext.getData("virtualFile") as VirtualFileImpl).name,
-                type = ScreenMappingXMLPrompt.ScreenType.ACTIVITY,
             )
         )
         if (dialog.showAndGet()) {
