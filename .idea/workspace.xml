@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16f5092f-4620-4484-9f7e-199fb318dc2c" name="Changes" comment="" />
+    <list default="true" id="16f5092f-4620-4484-9f7e-199fb318dc2c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateClassPromptAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateClassPromptAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateEnumsClassPromptAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateEnumsClassPromptAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateParamClassPromptAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateParamClassPromptAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateResultClassPromptAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateResultClassPromptAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateSealedClassPromptAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/actions/BuildCreateSealedClassPromptAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/common/CommonExt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vn/com/misa/misatoolkit/common/CommonExt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,24 +48,43 @@
       </state>
     </system>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2m715H2N1r3ABzXPnjfoCxKg9kT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.MISAToolKit [setupDependencies].executor": "Run",
     "Gradle.MisaToolKit [setupDependencies].executor": "Run",
+    "Gradle.Run Plugin.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "http.proxy"
   },
   "keyToStringList": {
     "kotlin-gradle-user-dirs": [
-      "/Users/longxii/.gradle"
+      "/Users/ttloi/.gradle"
     ]
   }
 }]]></component>
