@@ -67,7 +67,7 @@
                 description="Sinh comment tự động cho mã nguồn" id="MSGenerateCommentAction"
                 text="Hỗ Trợ Sinh Comment" />
 
-            <action class="vn.com.misa.misatoolkit.actions.MSGenerateScreenMappingXMLAction"
+            <action class="vn.com.misa.misatoolkit.actions.screenmapxml.MSGenerateScreenMappingXMLAction"
                 description="Tạo file màn hình ánh xạ XML tự động" id="MSGenerateScreenMappingXMLAction"
                 text="Sinh File Màn Hình Ánh Xạ XML" />
 
@@ -116,8 +116,8 @@
                 description="Chuyển đổi json thành object" id="MSConvertJsonToObjectAction"
                 text="Json to Object" />
 
-            <action id="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
-                    class="vn.com.misa.misatoolkit.action.ShowMISAToolHelperAction"
+            <action id="vn.com.misa.misatoolkit.actions.ShowMISAToolHelperAction"
+                    class="vn.com.misa.misatoolkit.actions.ShowMISAToolHelperAction"
                     text="Show MISA Tool Helper"
                     description="Show the MISA Tool Helper window">
             </action>
