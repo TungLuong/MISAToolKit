@@ -121,6 +121,13 @@
                     text="Show MISA Tool Helper"
                     description="Show the MISA Tool Helper window">
             </action>
+
+<!--            <action id="vn.com.misa.misatoolkit.actions.EnterKeyAction"-->
+<!--                    class="vn.com.misa.misatoolkit.actions.EnterKeyAction"-->
+<!--                    text="Enter Key Action"-->
+<!--                    description="Action triggered by Enter key">-->
+<!--                <keyboard-shortcut keymap="$default" first-keystroke="TAB"/>-->
+<!--            </action>-->
         </group>
     </actions>
 

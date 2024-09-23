@@ -6,8 +6,7 @@ import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBPanel
 import org.json.JSONObject
-import java.awt.Component
-import java.awt.Dimension
+import java.awt.*
 import javax.swing.*
 import javax.swing.event.TreeSelectionEvent
 import javax.swing.tree.DefaultMutableTreeNode
@@ -17,7 +16,8 @@ class MISAToolHelpWindowFactory : ToolWindowFactory, DumbAware {
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
         val panel = JBPanel<JBPanel<*>>()
-        panel.layout = BoxLayout(panel, BoxLayout.Y_AXIS)
+        panel.layout = BorderLayout()
+        panel.preferredSize = Dimension(1600, panel.preferredSize.height)
 
         // Read and parse JSON file
         val jsonContent = readJsonFile("asset/help_content.json")
@@ -31,6 +31,7 @@ class MISAToolHelpWindowFactory : ToolWindowFactory, DumbAware {
         tree.cellRenderer = HelpContentTreeCellRenderer()
         tree.isRootVisible = true
         val treeView = JScrollPane(tree)
+        treeView.border = BorderFactory.createTitledBorder("Help Topics")
 
         // Panel to display details
         val detailArea = JTextArea()
@@ -45,14 +46,42 @@ class MISAToolHelpWindowFactory : ToolWindowFactory, DumbAware {
         tree.addTreeSelectionListener { event: TreeSelectionEvent? ->
             val selectedNode = tree.lastSelectedPathComponent as DefaultMutableTreeNode
             if (selectedNode.isLeaf) {
-                detailArea.text = (selectedNode.userObject as? HelpContent)?.content ?: ""
+                val helpContent = selectedNode.userObject as? HelpContent
+                when (helpContent?.id) {
+                    "details" -> {
+                        detailArea.text = helpContent.content
+                        detailView.setViewportView(detailArea)
+                    }
+                    "video_example" -> {
+                        val videoIcon = loadAndScaleImageIcon(helpContent.path ?: "", 400, 300)
+                        detailArea.text = ""
+                        detailView.setViewportView(JLabel(videoIcon))
+                    }
+                    "gif_example" -> {
+                        val gifIcon = loadAndScaleImageIcon(helpContent.path ?: "", 400, 300)
+                        if (gifIcon != null) {
+                            detailArea.text = ""
+                            detailView.setViewportView(JLabel(gifIcon))
+                        } else {
+                            detailArea.text = "Image not found: ${helpContent.path}"
+                            detailView.setViewportView(detailArea)
+                        }
+                    }
+                    else -> {
+                        detailArea.text = helpContent?.content ?: ""
+                        detailView.setViewportView(detailArea)
+                    }
+                }
             }
         }
+
+        // Automatically select the first node and load its content
+        tree.setSelectionRow(0)
 
         // Layout
         val splitPane = JSplitPane(JSplitPane.VERTICAL_SPLIT, treeView, detailView)
         splitPane.dividerLocation = toolWindow.component.height / 2
-        panel.add(splitPane)
+        panel.add(splitPane, BorderLayout.CENTER)
 
         toolWindow.component.add(panel)
     }
@@ -68,6 +97,7 @@ class MISAToolHelpWindowFactory : ToolWindowFactory, DumbAware {
         val level = jsonObject.getInt("level")
         val parentId = jsonObject.optString("parentId", null)
         val content = jsonObject.optString("content", null)
+        val path = jsonObject.optString("path", null)
         val children = mutableListOf<HelpContent>()
         if (jsonObject.has("children")) {
             val childrenArray = jsonObject.getJSONArray("children")
@@ -75,7 +105,7 @@ class MISAToolHelpWindowFactory : ToolWindowFactory, DumbAware {
                 children.add(parseJsonObject(childrenArray.getJSONObject(i)))
             }
         }
-        return HelpContent(id, title, level, parentId, content, children)
+        return HelpContent(id, title, level, parentId, content, path, children)
     }
 
     private fun createTreeNode(helpContent: HelpContent): DefaultMutableTreeNode {
@@ -101,34 +131,13 @@ class MISAToolHelpWindowFactory : ToolWindowFactory, DumbAware {
         }
     }
 
-}
-
-data class HelpContent(
-    val id: String,
-    val title: String,
-    val level: Int,
-    val parentId: String?,
-    val content: String?,
-    val children: List<HelpContent> = emptyList()
-)
-
-class HelpContentTreeCellRenderer : DefaultTreeCellRenderer() {
-    override fun getTreeCellRendererComponent(
-        tree: JTree?,
-        value: Any?,
-        selected: Boolean,
-        expanded: Boolean,
-        leaf: Boolean,
-        row: Int,
-        hasFocus: Boolean
-    ): Component {
-        val component = super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus)
-        if (value is DefaultMutableTreeNode) {
-            val userObject = value.userObject
-            if (userObject is HelpContent) {
-                text = userObject.title
-            }
+    private fun loadAndScaleImageIcon(path: String, width: Int, height: Int): ImageIcon? {
+        val resource = this::class.java.classLoader.getResource(path)
+        return resource?.let {
+            ImageIcon(it)
+        } ?: run {
+            println("Image not found: $path")
+            null
         }
-        return component
     }
 }
